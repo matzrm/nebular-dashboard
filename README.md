@@ -1,6 +1,15 @@
-# DashboardV17
+# Nebular Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+This project wish to be an alternative to the official Nebular starter-kit.
+It has been designed to works with the last angular version (17), the last nebular packages (13) and customized with few essential (for me) packages:
+-  ng-bootstrap v5
+-  ngx-translate
+-  secure-web-storage
+-  @ngrx/store
+
+## Live Demo
+
+Live demo is avaialable at https://nebular.progel.net
 
 ## Development server
 
