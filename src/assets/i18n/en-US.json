@@ -1,0 +1,15 @@
+{
+	"@auth": {
+		"login": "Log in to use the dashboard!",
+		"password": "Enter your password",
+		"remember": "Remember me",
+		"required_password": "The password is mandatory",
+		"required_username": "Email is required",
+		"username": "Insert your email",
+		"welcome": "Welcome to the dashboard!"
+	},
+	"@home": {
+		"body": "Thank you Akveo Team for creating this amazing theme!",
+		"welcome": "Welcome to the Dashboard"
+	}
+}
