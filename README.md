@@ -1,7 +1,7 @@
 # Nebular Dashboard
 
 This project wish to be an alternative to the official Nebular starter-kit.
-It has been designed to works with the last angular version (17), the last nebular packages (13) and customized with few essential (for me) packages:
+It has been designed to works with the last angular version (18), the last nebular packages (14) and customized with few essential (for me) packages:
 -  ng-bootstrap v5
 -  ngx-translate
 -  secure-web-storage
