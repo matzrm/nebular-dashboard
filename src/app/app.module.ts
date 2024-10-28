@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ThemeModule } from './@theme/theme.module';
 import { NbDialogModule, NbMenuModule, NbSidebarModule, NbToastrModule, NbWindowModule } from '@nebular/theme';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, HttpRequest } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpRequest, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { StoreModule } from '@ngrx/store';
@@ -30,59 +30,50 @@ function filterInterceptorRequest(req: HttpRequest<any>): boolean {
     .some(url => req.url.includes(url));
 }
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    I18nModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    CoreModule.forRoot(),
-    ThemeModule.forRoot(),
-    NbMenuModule.forRoot(),
-    NbSidebarModule.forRoot(),
-    NbDialogModule.forRoot(),
-    NbWindowModule.forRoot(),
-    NbToastrModule.forRoot(),
-    TranslateModule.forRoot(
-      {
-        defaultLanguage: 'en-US',
-        isolate: false,
-        loader: {
-          provide: TranslateLoader,
-          useFactory: (createTranslateLoader),
-          deps: [HttpClient]
-        }
-      }
-    ),
-    StoreModule.forRoot(ROOT_REDUCERS, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true,
-        strictStateSerializability: true,
-        strictActionSerializability: true
-      }
-    }),
-    StoreDevtoolsModule.instrument({
-      name: 'PNET CUSTOM'
-    }),
-    StoreRouterConnectingModule.forRoot(),
-    NgbModule,
-  ],
-  providers: [ 
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-    { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true},
-    { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true},
-    { provide: NB_AUTH_TOKEN_INTERCEPTOR_FILTER, useValue: filterInterceptorRequest },
-    {provide: APP_BASE_HREF, useValue: "/" },
-    { provide: NbTokenStorage, useClass: NbCustomTokenStorage },
-    { provide: LOCALE_ID, useValue: 'it-IT'},
-
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [I18nModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CoreModule.forRoot(),
+        ThemeModule.forRoot(),
+        NbMenuModule.forRoot(),
+        NbSidebarModule.forRoot(),
+        NbDialogModule.forRoot(),
+        NbWindowModule.forRoot(),
+        NbToastrModule.forRoot(),
+        TranslateModule.forRoot({
+            defaultLanguage: 'en-US',
+            isolate: false,
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
+        }),
+        StoreModule.forRoot(ROOT_REDUCERS, {
+            metaReducers,
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictActionImmutability: true,
+                strictStateSerializability: true,
+                strictActionSerializability: true
+            }
+        }),
+        StoreDevtoolsModule.instrument({
+            name: 'PNET CUSTOM'
+        }),
+        StoreRouterConnectingModule.forRoot(),
+        NgbModule], providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+        { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
+        { provide: NB_AUTH_TOKEN_INTERCEPTOR_FILTER, useValue: filterInterceptorRequest },
+        { provide: APP_BASE_HREF, useValue: "/" },
+        { provide: NbTokenStorage, useClass: NbCustomTokenStorage },
+        { provide: LOCALE_ID, useValue: 'it-IT' },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule { }
