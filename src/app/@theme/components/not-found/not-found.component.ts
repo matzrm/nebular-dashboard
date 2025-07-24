@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   selector: 'ngx-not-found',
   styleUrls: ['./not-found.component.scss'],
   templateUrl: './not-found.component.html',
+    standalone: false,
+
 })
 export class NotFoundComponent {
 

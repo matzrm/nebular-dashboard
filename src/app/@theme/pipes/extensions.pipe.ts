@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'extension' })
+@Pipe({ name: 'extension' , standalone: false})
 
 export class RemoveExtension implements PipeTransform {
   transform(item) {

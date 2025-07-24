@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
  * Return Type obtained by optional @param type OR assignment type.
  */
 
-@Pipe({ name: 'cast' , pure: true,
+@Pipe({ name: 'cast' , pure: true, standalone: false
 })
 export class CastPipe implements PipeTransform {
 

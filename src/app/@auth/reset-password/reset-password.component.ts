@@ -11,6 +11,7 @@ import { Language } from '../../@i18n/models/language.model';
   selector: 'ngx-reset-password-page',
   templateUrl: './reset-password.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class NgxResetPasswordComponent extends NbResetPasswordComponent {
     currentLanguage$: Observable<Language>;

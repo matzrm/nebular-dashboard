@@ -3,6 +3,8 @@ import { NavigationService } from '../../@core/utils.ts/navigation.service';
 
 @Directive({
   selector: "[backButton]",
+    standalone: false,
+
 })
 export class BackButtonDirective {
   constructor(private navigation: NavigationService) {}

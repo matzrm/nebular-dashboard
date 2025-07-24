@@ -6,7 +6,8 @@ import { Language } from '../../models/language.model';
 
 @Component({
   selector: 'app-language-selector',
-  templateUrl: './language-selector.component.html'
+  templateUrl: './language-selector.component.html',
+  standalone: false
 })
 export class LanguageSelectorComponent implements OnInit {
   constructor(private readonly store: Store<fromI18n.State>) {}

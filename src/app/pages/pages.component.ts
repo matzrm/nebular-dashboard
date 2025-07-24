@@ -5,6 +5,7 @@ import { MENU_ITEMS } from './pages-menu';
     selector: 'ngx-pages',
     styleUrls: ['pages.component.scss'],
     templateUrl: './pages.component.html',
+    standalone: false
   })
   export class PagesComponent implements OnInit, OnDestroy{
     menu = MENU_ITEMS;

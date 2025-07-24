@@ -4,7 +4,9 @@ import { NbDialogRef } from '@nebular/theme';
 @Component({
   selector: 'help',
   templateUrl: './help.component.html',
-  styleUrls: ['./help.component.scss']
+  styleUrls: ['./help.component.scss'],
+    standalone: false,
+
 })
 export class HelpComponent implements OnInit {
 

@@ -4,6 +4,8 @@ import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'ngx-one-column-layout',
   styleUrls: ['./one-column.layout.scss'],
+    standalone: false,
+
   template: `
     <nb-layout>
       <nb-layout-header fixed>

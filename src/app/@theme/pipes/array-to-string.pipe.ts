@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 
 @Pipe({
-  name: "arrayToString"
+  name: "arrayToString", standalone: false
 })
 export class ArrayToStringPipe implements PipeTransform {
   transform(input: string[] | IData[], sep = ","): string | undefined {

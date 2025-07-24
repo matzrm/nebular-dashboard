@@ -15,6 +15,7 @@ import { Language } from '../../@i18n/models/language.model';
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
+  standalone: false
 })
 export class NgxLoginComponent extends NbLoginComponent {
   currentLanguage$: Observable<Language>;

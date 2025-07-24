@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
       Created with <span style="color: #ff3d71">  ♥  </span> by <b><a href="https://progel.net" target="_blank">Progel.net</a></b> {{year}} powered by <a href="https://akveo.github.io/nebular/" target="_blank"> Nebular Akveo Theme</a>
     </span>
   `,
+    standalone: false,
+
 })
 export class FooterComponent {
 

@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component';
     PagesRoutingModule,
     ThemeModule,
     NbMenuModule,
-    TranslateModule,
+    TranslateModule.forChild(),
     NbCardModule,
     NbAlertModule,
     NbIconModule,

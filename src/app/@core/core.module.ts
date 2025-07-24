@@ -31,6 +31,7 @@ export const NB_CORE_PROVIDERS = [
         login: {
           endpoint: '/auth/sign-in',
           method: 'post',
+          
         },
         register: {
           endpoint: '/auth/sign-up',
@@ -52,6 +53,7 @@ export const NB_CORE_PROVIDERS = [
           endpoint: '/auth/reset-pass',
           method: 'post',
         },
+        
         refreshToken: {
           endpoint: '/auth/refresh-token',
           method: 'post',
@@ -60,6 +62,7 @@ export const NB_CORE_PROVIDERS = [
             failure: null,
           },
         },
+        
         token: {
           class: NbAuthJWTToken,
         },

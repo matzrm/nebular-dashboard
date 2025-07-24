@@ -10,7 +10,8 @@ import { Component, } from '@angular/core';
 @Component({
   selector: 'ngx-auth',
   styleUrls: ['./ngx-auth.component.scss'],
-  templateUrl: './ngx-auth.component.html'
+  templateUrl: './ngx-auth.component.html',
+  standalone: false
 })
 export class NgxAuthComponent extends NbAuthComponent{
 

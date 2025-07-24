@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ngx-two-columns-layout',
   styleUrls: ['./two-columns.layout.scss'],
+    standalone: false,
+
   template: `
     <nb-layout windowMode>
       <nb-layout-header fixed>
