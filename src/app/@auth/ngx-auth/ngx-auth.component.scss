@@ -1,4 +1,4 @@
-@import '@nebular/theme/styles/global/_breakpoints.scss';
+@use '@nebular/theme/styles/global/_breakpoints.scss';
 
 :host {
   $auth-layout-padding: 2.5rem;
